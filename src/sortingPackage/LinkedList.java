@@ -150,18 +150,67 @@ public class LinkedList {
     }
 
     public int getKthFromTheEnd(int k) {
-        if(isEmpty() || size<k || k<=0) return -1;
+        if(isEmpty() )
+            throw new IllegalStateException();
 
         var one = first;
         var two = first;
         for(int i=0; i<k-1; i++){
             two = two.next;
+            if(two==null)
+                throw new IllegalArgumentException();
         }
-        while(two.next != null){
+        while(two != last){
             one = one.next;
             two = two.next;
         }
 
         return one.value;
+    }
+
+    public void printMiddle(){
+        var a = first;
+        var b = first;
+        while (b != last && b.next != last){
+            a = a.next;
+            b = b.next.next;
+        }
+
+        if(b==last)
+            System.out.println("Middle values: "+ a.value);
+        else
+            System.out.println("Middle values: "+ a.value+", "+ a.next.value);
+    }
+
+    public boolean hasLoop(){
+        var slow = first;
+        var fast = first;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (fast == slow)
+                return true;
+        }
+
+        return false;
+    }
+
+    public static LinkedList createWithLoop() {
+        var list = new LinkedList();
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
+
+        // Get a reference to 30
+        var node = list.last;
+
+        list.addLast(40);
+        list.addLast(50);
+
+        // Create the loop
+        list.last.next = node;
+
+        return list;
     }
 }

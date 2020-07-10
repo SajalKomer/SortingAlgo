@@ -10,9 +10,13 @@ public class Main {
         list.addLast(40);
         list.addLast(50);
         list.addLast(60);
+        list.addLast(70);
 
-        var kth = list.getKthFromTheEnd(2);
-        System.out.println(kth);
+        //var kth = list.getKthFromTheEnd(4);
+        //System.out.println(kth);
+        list.printMiddle();
 
+        var list2 = LinkedList.createWithLoop();
+        System.out.println(list2.hasLoop());
     }
 }
