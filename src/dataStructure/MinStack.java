@@ -1,4 +1,4 @@
-package sortingPackage;
+package dataStructure;
 
 //Problem: Design a stack that supports push, pop and retrieving the minimum value in constant time.
 

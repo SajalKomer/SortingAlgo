@@ -1,6 +1,4 @@
-package sortingPackage;
-
-import java.util.Arrays;
+package dataStructure;
 
 public class BubbleSort {
 

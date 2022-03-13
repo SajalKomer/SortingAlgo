@@ -1,4 +1,4 @@
-package sortingPackage;
+package dataStructure;
 
 import java.util.Stack;
 
