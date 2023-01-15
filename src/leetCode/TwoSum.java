@@ -18,4 +18,3 @@ public class TwoSum {
         return ans;
     }
 }
-
